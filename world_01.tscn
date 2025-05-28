@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cce22y1iymqsp"]
+
+[ext_resource type="Texture2D" uid="uid://81qv0iy0fklb" path="res://assets/imagens-ultimos-guardioes/mundo/world01.png" id="1_0yxgj"]
+[ext_resource type="PackedScene" uid="uid://b2tlin1k7aer0" path="res://actors/player.tscn" id="2_ovq2m"]
+[ext_resource type="PackedScene" uid="uid://bvin73jnglfq1" path="res://boss01.tscn" id="3_cujcs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cujcs"]
+size = Vector2(1549, 15)
+
+[node name="World-01" type="Node2D"]
+
+[node name="map" type="Sprite2D" parent="."]
+position = Vector2(768, 513)
+texture = ExtResource("1_0yxgj")
+
+[node name="player" parent="." instance=ExtResource("2_ovq2m")]
+position = Vector2(811, 953)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(779, 982)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-5, 36.5)
+shape = SubResource("RectangleShape2D_cujcs")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_cujcs")]
+position = Vector2(1319, 758)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(768, 512)

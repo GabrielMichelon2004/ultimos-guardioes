@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2tlin1k7aer0"]
+
+[ext_resource type="Script" uid="uid://d25yab8subcln" path="res://scripts/Player.cs" id="1_1yqc4"]
+[ext_resource type="Texture2D" uid="uid://eo8mhgtqpm4" path="res://assets/imagens-ultimos-guardioes/personagem-feminina/agachada-pulo-direita.png" id="2_kjkj0"]
+[ext_resource type="Texture2D" uid="uid://bloycu54oumlm" path="res://assets/imagens-ultimos-guardioes/personagem-feminina/personagem-feminino-frente.png" id="2_tue77"]
+[ext_resource type="Texture2D" uid="uid://dfolqjnx2grbl" path="res://assets/imagens-ultimos-guardioes/personagem-feminina/personagem-feminino-lado.png" id="4_kjkj0"]
+[ext_resource type="Texture2D" uid="uid://rscjueau34uc" path="res://assets/imagens-ultimos-guardioes/personagem-feminina/personagem-feminino-lado-parado.png" id="5_tue77"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c3k7x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tue77")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kjkj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tue77")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kjkj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tue77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kjkj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tue77")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yxgj"]
+radius = 24.0
+height = 106.0
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(57, 939)
+script = ExtResource("1_1yqc4")
+
+[node name="Animated" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.107, 0.107)
+sprite_frames = SubResource("SpriteFrames_c3k7x")
+animation = &"run"
+frame_progress = 0.914949
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(2, 1)
+shape = SubResource("CapsuleShape2D_0yxgj")
