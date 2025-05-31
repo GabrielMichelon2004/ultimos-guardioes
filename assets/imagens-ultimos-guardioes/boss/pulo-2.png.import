@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cayq1kt60dj7t"
-path="res://.godot/imported/boss.png-e4e1643530d3bfab5574e3f53f599a97.ctex"
+uid="uid://clr0o8x1mobvw"
+path="res://.godot/imported/pulo-2.png-a4c9058bad9128cc1d4b4dfd36b78230.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens-ultimos-guardioes/boss/boss.png"
-dest_files=["res://.godot/imported/boss.png-e4e1643530d3bfab5574e3f53f599a97.ctex"]
+source_file="res://assets/imagens-ultimos-guardioes/boss/pulo-2.png"
+dest_files=["res://.godot/imported/pulo-2.png-a4c9058bad9128cc1d4b4dfd36b78230.ctex"]
 
 [params]
 

@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvin73jnglfq1"]
 
-[ext_resource type="Texture2D" uid="uid://boum0ssb1qr1u" path="res://assets/imagens-ultimos-guardioes/boss/boss.png" id="1_fpstc"]
+[ext_resource type="Texture2D" uid="uid://cayq1kt60dj7t" path="res://assets/imagens-ultimos-guardioes/boss/boss.png" id="1_fpstc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ac18"]
-size = Vector2(404, 517)
+size = Vector2(517, 676)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="boss" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_fpstc")
@@ -13,5 +13,7 @@ texture = ExtResource("1_fpstc")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6, -7.5)
+position = Vector2(4.5, -6)
 shape = SubResource("RectangleShape2D_1ac18")
+
+[node name="Timer" type="Timer" parent="."]

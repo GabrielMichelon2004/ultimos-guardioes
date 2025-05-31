@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cayq1kt60dj7t"
-path="res://.godot/imported/boss.png-e4e1643530d3bfab5574e3f53f599a97.ctex"
+uid="uid://cu114my5p2cog"
+path="res://.godot/imported/boss-braco-90.png-798b2eaed655bc4ca382a45a526df101.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens-ultimos-guardioes/boss/boss.png"
-dest_files=["res://.godot/imported/boss.png-e4e1643530d3bfab5574e3f53f599a97.ctex"]
+source_file="res://assets/imagens-ultimos-guardioes/boss/boss-braco-90.png"
+dest_files=["res://.godot/imported/boss-braco-90.png-798b2eaed655bc4ca382a45a526df101.ctex"]
 
 [params]
 
