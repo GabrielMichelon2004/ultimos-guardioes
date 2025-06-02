@@ -1,19 +1,85 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvin73jnglfq1"]
+[gd_scene load_steps=8 format=3 uid="uid://bvin73jnglfq1"]
 
-[ext_resource type="Texture2D" uid="uid://cayq1kt60dj7t" path="res://assets/imagens-ultimos-guardioes/boss/boss.png" id="1_fpstc"]
+[ext_resource type="Script" uid="uid://dmde5p2s33u4g" path="res://scripts/Boss01.cs" id="1_1ac18"]
+[ext_resource type="Texture2D" uid="uid://l4qi2gxd3ckg" path="res://assets/imagens-ultimos-guardioes/boss/animacoes-boss.png" id="2_1ac18"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ac18"]
 size = Vector2(517, 676)
 
-[node name="boss" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_1wb8f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_fpstc")
+[sub_resource type="Animation" id="Animation_csrhu"]
+resource_name = "jump"
+length = 0.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(0, 1)]
+}
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+[sub_resource type="Animation" id="Animation_yadco"]
+resource_name = "run"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(2, 0)]
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_soobw"]
+_data = {
+&"RESET": SubResource("Animation_1wb8f"),
+&"jump": SubResource("Animation_csrhu"),
+&"run": SubResource("Animation_yadco")
+}
+
+[node name="boss01" type="CharacterBody2D"]
+script = ExtResource("1_1ac18")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_1ac18")
+hframes = 4
+vframes = 2
+
+[node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(4.5, -6)
 shape = SubResource("RectangleShape2D_1ac18")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../sprite")
+libraries = {
+&"": SubResource("AnimationLibrary_soobw")
+}

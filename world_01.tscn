@@ -26,5 +26,5 @@ position = Vector2(779, 982)
 position = Vector2(-5, 36.5)
 shape = SubResource("RectangleShape2D_cujcs")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_cujcs")]
-position = Vector2(1325, 661)
+[node name="boss01" parent="." instance=ExtResource("3_cujcs")]
+position = Vector2(1258, 678)
